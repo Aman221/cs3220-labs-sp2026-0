@@ -4,10 +4,13 @@
 module sequential_circuits ( 
     input clk,    // Clocks are used in sequential circuits
     input d,
-    output q );//
+    output reg q
+);
 
 
 
-    assign q = d;
+    always @(posedge clk) begin
+        q <= d;
+    end
 
 endmodule
